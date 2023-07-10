@@ -4,16 +4,17 @@ import better.files.File
 
 name := "php2cpg"
 
-val phpParserVersion = "4.15.7"
-val upstreamParserBinName = "php-parser.phar"
+val phpParserVersion       = "4.15.7"
+val upstreamParserBinName  = "php-parser.phar"
 val versionedParserBinName = s"php-parser-$phpParserVersion.phar"
-val phpParserDlUrl   = s"https://github.com/joernio/PHP-Parser/releases/download/v$phpParserVersion/$upstreamParserBinName"
+val phpParserDlUrl =
+  s"https://github.com/joernio/PHP-Parser/releases/download/v$phpParserVersion/$upstreamParserBinName"
 
 dependsOn(Projects.dataflowengineoss, Projects.x2cpg % "compile->compile;test->test")
 
 libraryDependencies ++= Seq(
-  "com.lihaoyi"   %% "ujson"             % "2.0.0",
-  "com.lihaoyi"   %% "upickle"           % "2.0.0",
+  "com.lihaoyi"   %% "ujson"             % "3.1.2",
+  "com.lihaoyi"   %% "upickle"           % "3.1.2",
   "io.shiftleft"  %% "codepropertygraph" % Versions.cpg,
   "org.scalatest" %% "scalatest"         % Versions.scalatest % Test,
   "io.circe"      %% "circe-core"        % "0.15.0-M1"

@@ -3,7 +3,7 @@ import scala.util.Try
 import versionsort.VersionHelper
 import com.typesafe.config.{Config, ConfigFactory}
 
-name               := "jssrc2cpg"
+name := "jssrc2cpg"
 
 dependsOn(Projects.dataflowengineoss, Projects.x2cpg % "compile->compile;test->test")
 
@@ -19,7 +19,7 @@ astGenVersion := appProperties.value.getString("jssrc2cpg.astgen_version")
 
 libraryDependencies ++= Seq(
   "io.shiftleft"              %% "codepropertygraph" % Versions.cpg,
-  "com.lihaoyi"               %% "upickle"           % "2.0.0",
+  "com.lihaoyi"               %% "upickle"           % "3.1.2",
   "com.fasterxml.jackson.core" % "jackson-databind"  % "2.15.2",
   "com.typesafe"               % "config"            % "1.4.2",
   "com.michaelpollmeier"       % "versionsort"       % "1.0.11",
